@@ -26,15 +26,6 @@
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
 
-  &--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-
-    &::after {
-      background-color: $color-white;
-    }
-  }
-
   &::after {
     content: "";
     display: inline-block;
@@ -52,7 +43,16 @@
     animation: moveInBottom 200ms 250ms backwards;
   }
 
-  &-text {
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--text {
     &:link,
     &:visited {
       font-size: $default-font-size;
@@ -74,6 +74,15 @@
     &:active {
       box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
       transform: translateY(0);
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
     }
   }
 }
