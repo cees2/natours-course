@@ -124,6 +124,10 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0 15rem; }
 
+.section-stories {
+  position: relative;
+  padding: 15rem; }
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -157,7 +161,7 @@ body {
   z-index: -1;
   transition: all 400ms; }
 
-.btn --animated {
+.btn--animated {
   animation: moveInBottom 200ms 250ms backwards; }
 
 .btn--white {
@@ -166,22 +170,23 @@ body {
   .btn--white::after {
     background-color: #fff; }
 
-.btn--text:link, .btn--text:visited {
+.btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
   color: #55c57a;
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid #55c57a;
   padding: 3px;
-  transition: all 150ms; }
+  transition: all 150ms;
+  border-radius: 3px; }
 
-.btn--text:hover {
+.btn-text:hover {
   background-color: #55c57a;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-2px); }
 
-.btn--text:active {
+.btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
 
@@ -190,6 +195,20 @@ body {
   color: #fff; }
   .btn--green::after {
     background-color: #55c57a; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 20%;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .composition {
   height: 100%;
@@ -328,6 +347,56 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 2rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  font-size: 1.6rem;
+  display: flex;
+  column-gap: 3rem;
+  transform: skewX(-12deg);
+  margin-bottom: 6rem; }
+  .story > * {
+    transform: skewX(12deg); }
+  .story__shape {
+    flex-basis: 15rem;
+    height: 15rem;
+    flex-shrink: 0;
+    position: relative;
+    clip-path: circle(50% at 50% 50%); }
+  .story__img {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    aspect-ratio: 1;
+    backface-visibility: hidden;
+    transition: all 200ms;
+    transform: scale(120%); }
+  .story__text {
+    flex-grow: 1; }
+  .story__caption {
+    position: absolute;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    bottom: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 20%);
+    transition: all 200ms;
+    backface-visibility: hidden; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__img {
+    filter: blur(3px) brightness(80%);
+    transform: scale(100%); }
 
 .header {
   height: 95vh;
