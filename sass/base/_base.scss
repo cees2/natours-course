@@ -6,8 +6,20 @@
   box-sizing: border-box;
 }
 
-:root {
+html {
   font-size: 62.5%;
+
+  @include respondMax($tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respondMax($tab-port) {
+    font-size: 50%;
+  }
+
+  @include respondMin($big-desktop) {
+    font-size: 75%;
+  }
 }
 
 body {
@@ -17,4 +29,8 @@ body {
   line-height: 1.7;
   color: $color-grey-dark-1;
   padding: 3rem;
+
+  @include respondMax($tab-port) {
+    padding: 0;
+  }
 }

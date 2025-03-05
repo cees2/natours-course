@@ -4,3 +4,37 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/*
+  MEDIA QUERIES:
+  0 - 600px --> Phone
+  600 - 900px --> Tablet portrait
+  900 - 1200px --> Tablet landscape
+  1200 - 1800px --> Desktop first approach(done)  
+  1800px+ --> Big desktop  
+*/
+
+/*
+  $breakpoint argument choices: 
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop
+*/
+
+$phone: 600;
+$tab-port: 900;
+$tab-land: 1200;
+$big-desktop: 1800;
+
+@mixin respondMax($breakpoint) {
+  @media (max-width: #{($breakpoint/16) * 1em}) {
+    @content;
+  }
+}
+
+@mixin respondMin($breakpoint) {
+  @media (min-width: #{($breakpoint/16) * 1em}) {
+    @content;
+  }
+}

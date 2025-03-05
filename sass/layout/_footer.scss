@@ -4,9 +4,17 @@
   font-size: 1.4rem;
   color: $color-grey-light-1;
 
+  @include respondMax($tab-port) {
+    padding: 8rem 0;
+  }
+
   &__logo-box {
     margin-bottom: 8rem;
     text-align: center;
+
+    @include respondMax($tab-port) {
+      margin-bottom: 4rem;
+    }
   }
 
   &__logo {
@@ -23,6 +31,10 @@
     list-style-type: none;
     display: flex;
     justify-content: space-between;
+
+    @include respondMax($tab-port) {
+      justify-content: space-around;
+    }
   }
 
   &__link {

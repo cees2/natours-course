@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100&display=swap");
 @import "abstracts/variables";
 
+@import "abstracts/mixins";
 @import "base/base";
 @import "base/typography";
 @import "base/animations";
 @import "base/utilities";
 
 @import "abstracts/funcitons";
-@import "abstracts/mixins";
 
 @import "pages/home";
 

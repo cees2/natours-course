@@ -4,25 +4,49 @@
 
   &__photo {
     position: absolute;
-    width: 55%;
+    max-width: 55%;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
     transition: all 200ms;
     z-index: 1;
     outline-offset: 2rem;
 
+    @include respondMax($tab-port) {
+      box-shadow: 0 1.5rem 3rem rgba($color-black, 0.4);
+      position: relative;
+      width: 33.33%;
+    }
+
     &--p1 {
       top: -2rem;
       left: 0;
+
+      @include respondMax($tab-port) {
+        left: 0;
+        top: 0;
+        transform: scale(120%);
+      }
     }
 
     &--p2 {
       top: 2rem;
       right: 0;
+
+      @include respondMax($tab-port) {
+        top: -1rem;
+        transform: scale(130%);
+        z-index: 7;
+      }
     }
 
     &--p3 {
       top: 10rem;
       left: 20%;
+
+      @include respondMax($tab-port) {
+        left: 0;
+        top: 1rem;
+        transform: scale(110%);
+      }
     }
 
     &:hover {
